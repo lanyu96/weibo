@@ -1,0 +1,85 @@
+package mvp.com.zhou.mvp.ui.bean.weibo;
+
+import android.graphics.drawable.AdaptiveIconDrawable;
+import android.graphics.drawable.Drawable;
+
+public class JVBean {
+    private int head;
+    private String name;
+    private String WBName;
+    private String indexSrc;
+    private String fenSi;
+    private String money;
+
+    private Drawable icon;
+
+    public JVBean() {
+
+    }
+
+
+    public JVBean(int head, String name, String WBName, String indexSrc, String fenSi, String money) {
+        this.head = head;
+        this.name = name;
+        this.WBName = WBName;
+        this.indexSrc = indexSrc;
+        this.fenSi = fenSi;
+        this.money = money;
+    }
+
+    public Drawable getIcon() {
+        return icon;
+    }
+
+    public void setIcon(Drawable icon) {
+        this.icon = icon;
+    }
+
+    public int getHead() {
+        return head;
+    }
+
+    public void setHead(int head) {
+        this.head = head;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getWBName() {
+        return WBName;
+    }
+
+    public void setWBName(String WBName) {
+        this.WBName = WBName;
+    }
+
+    public String getIndexSrc() {
+        return indexSrc;
+    }
+
+    public void setIndexSrc(String indexSrc) {
+        this.indexSrc = indexSrc;
+    }
+
+    public String getFenSi() {
+        return fenSi;
+    }
+
+    public void setFenSi(String fenSi) {
+        this.fenSi = fenSi;
+    }
+
+    public String getMoney() {
+        return money;
+    }
+
+    public void setMoney(String money) {
+        this.money = money;
+    }
+}

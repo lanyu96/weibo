@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <include layout="@layout/include_common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/my_ll_row">
+                    <TextView
+                        style="@style/my_tv_key"
+                        android:text="账        号" />
+                    <TextView
+                        android:id="@+id/tv_person_name"
+                        style="@style/my_tv_value" />
+
+                    <ImageView
+                        style="@style/my_iv_click"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <View style="@style/v_row_devide" />
+
+                <LinearLayout style="@style/my_ll_row">
+                    <TextView
+                        style="@style/my_tv_key"
+                        android:text="手  机  号" />
+                    <TextView
+                        android:id="@+id/tv_person_real_name"
+                        style="@style/my_tv_value" />
+                    <ImageView
+                        style="@style/my_iv_click"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+
+
+                <View style="@style/v_row_devide" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_person_farm"
+                    style="@style/my_ll_row">
+
+                    <TextView
+                        style="@style/my_tv_key"
+
+                        android:text="微  信  号" />
+
+                    <TextView
+                        android:id="@+id/tv_person_farm"
+                        style="@style/my_tv_value" />
+
+                    <ImageView style="@style/my_iv_click"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+
+                <View style="@style/v_row_devide" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_person_feild"
+                    style="@style/my_ll_row">
+
+                    <TextView
+                        style="@style/my_tv_key"
+
+                        android:text="微  博  名" />
+
+                    <TextView
+                        android:id="@+id/tv_person_feild"
+                        style="@style/my_tv_value" />
+
+                    <ImageView style="@style/my_iv_click"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+                <View style="@style/v_row_devide" />
+                <LinearLayout
+                    android:id="@+id/ll_person_select_style_ll"
+                    style="@style/my_ll_row">
+
+                    <TextView
+                        style="@style/my_tv_key"
+
+                        android:text="粉        丝" />
+
+                    <TextView
+                        android:id="@+id/tv_person_select_style_tv"
+                        style="@style/my_tv_value" />
+
+                    <ImageView style="@style/my_iv_click"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+                <View style="@style/v_row_devide" />
+                <LinearLayout
+                    android:id="@+id/fragment_person_modify_password_ll"
+                    style="@style/my_ll_row">
+
+                    <TextView
+                        style="@style/my_tv_key"
+
+                        android:text="报        价" />
+
+                    <TextView
+                        android:id="@+id/tv_person_baojia"
+                        style="@style/my_tv_value" />
+
+                    <ImageView style="@style/my_iv_click"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+                <View style="@style/v_row_devide" />
+                <LinearLayout style="@style/my_ll_row">
+
+                    <TextView
+                        style="@style/my_tv_key"
+
+                        android:text="金   /   黄" />
+
+                    <TextView
+                        android:id="@+id/fragment_person_is_jin_tv"
+                        android:text=""
+                        style="@style/my_tv_value" />
+
+                    <ImageView style="@style/my_iv_click"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+
+                <View style="@style/v_row_devide" />
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

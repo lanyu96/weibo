@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">微博管理平台</string>
+
+    <string name="loading">正在加载...</string>
+    <string name="try_again_quit">再按一次退出应用</string>
+
+    <string name="login_space">登&#160;&#160;录</string>
+
+
+</resources>

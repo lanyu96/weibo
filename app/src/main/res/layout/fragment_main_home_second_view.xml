@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:paddingTop="32dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:background="?attr/base_color"
+        android:gravity="left"
+        android:paddingLeft="20dp"
+        android:text=" 报价"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#52a09d9d"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="35dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:id="@+id/act_bj_01_ll"
+                >
+
+                <TextView
+                    android:text="微博直发报价 : "
+                    style="@style/style_main_list_key" />
+                <TextView
+                    android:hint="点击查看报价"
+                    style="@style/style_main_list_value" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#52a09d9d"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:id="@+id/act_bj_02_ll"
+                >
+
+                <TextView
+                    android:text="微博转发报价 : "
+                    style="@style/style_main_list_key" />
+                <TextView
+                    android:hint="点击查看报价"
+                    style="@style/style_main_list_value" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#52a09d9d"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:id="@+id/act_bj_03_ll"
+                >
+
+                <TextView
+                    android:text="微博置顶报价 : "
+                    style="@style/style_main_list_key" />
+                <TextView
+                    android:hint="点击查看报价"
+                    style="@style/style_main_list_value" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#52a09d9d"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:id="@+id/act_bj_04_ll"
+                >
+
+                <TextView
+                    android:text="微博直发内部报价 : "
+                    style="@style/style_main_list_key" />
+                <TextView
+                    android:hint="点击查看报价"
+                    style="@style/style_main_list_value" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#52a09d9d"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:id="@+id/act_bj_05_ll"
+                >
+
+                <TextView
+                    android:text="微博转发内部报价 : "
+                    style="@style/style_main_list_key" />
+                <TextView
+                    android:hint="点击查看报价"
+                    style="@style/style_main_list_value" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#52a09d9d"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:id="@+id/act_bj_06_ll"
+                >
+
+                <TextView
+                    android:text="微博置顶内部报价 : "
+                    style="@style/style_main_list_key" />
+                <TextView
+                    android:hint="点击查看报价"
+                    style="@style/style_main_list_value" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#52a09d9d"
+                />
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

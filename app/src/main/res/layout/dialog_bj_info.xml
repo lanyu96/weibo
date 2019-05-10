@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:paddingTop="25dp"
+    android:paddingBottom="25dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="详细报价"
+        android:gravity="center"
+        android:textSize="25sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:text="1-3天 :"
+            style="@style/style_bj_dialog_key" />
+
+        <TextView
+            android:text=""
+            android:id="@+id/dialog_bj_tv_01"
+            style="@style/style_bj_dialog_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center">
+
+        <TextView
+            android:text="1-7天 :"
+            style="@style/style_bj_dialog_key" />
+
+        <TextView
+            android:text=""
+            android:id="@+id/dialog_bj_tv_02"
+            style="@style/style_bj_dialog_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center">
+
+        <TextView
+            android:text="1-15天 :"
+            style="@style/style_bj_dialog_key" />
+
+        <TextView
+            android:text=""
+            android:id="@+id/dialog_bj_tv_03"
+            style="@style/style_bj_dialog_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center">
+
+        <TextView
+            android:text="1-30天 :"
+            style="@style/style_bj_dialog_key" />
+
+        <TextView
+            android:text=""
+            android:id="@+id/dialog_bj_tv_04"
+            style="@style/style_bj_dialog_value" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
