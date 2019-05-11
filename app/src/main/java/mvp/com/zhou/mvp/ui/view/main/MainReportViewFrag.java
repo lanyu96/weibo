@@ -39,21 +39,21 @@ public class MainReportViewFrag extends BaseFragment<MainReportPresenterImpl> im
     @Override
     public void initView() {
         list = new ArrayList<>();
-        list.add(new JVBean(R.drawable.j01,"a1","电视圈大哥","https://weibo.com/u/1812690611","301万","1700"));
-        list.add(new JVBean(R.drawable.j02,"a2","娱乐神算子","https://weibo.com/u/2613127473","310万","1800"));
-        list.add(new JVBean(R.drawable.j03,"a3","卫视剧透社","https://weibo.com/u/3945344172","153万","1200"));
-        list.add(new JVBean(R.drawable.j04,"a4","卫视小鲜肉","https://weibo.com/u/6040188827","110万","800"));
-        list.add(new JVBean(R.drawable.j05,"a5","娱乐主人公","https://weibo.com/u/6363118660","101万","700"));
-        list.add(new JVBean(R.drawable.j06,"a6","娱乐一番姐","https://weibo.com/u/5269405674","97万","600"));
-        list.add(new JVBean(R.drawable.j07,"a7","芒果文娱","https://weibo.com/u/6196420604","94万","600"));
-        list.add(new JVBean(R.drawable.j08,"a8","娱乐屋","https://weibo.com/u/6486325817","89万","500"));
-        list.add(new JVBean(R.drawable.j09,"a9","影视捣蛋","https://weibo.com/u/2865573464","84万","500"));
-        list.add(new JVBean(R.drawable.j10,"b1","娱评员","https://weibo.com/u/6523325161","71万","400"));
-        list.add(new JVBean(R.drawable.j11,"b2","每日娱乐饭","https://weibo.com/u/6385017934","60万","300"));
-        list.add(new JVBean(R.drawable.j12,"b3","娱乐小少年","https://weibo.com/u/6079561687","57万","300"));
-        list.add(new JVBean(R.drawable.j13,"b4","影视路透社","https://weibo.com/u/6034913285","53万","300"));
-        list.add(new JVBean(R.drawable.j14,"b5","娱乐圈安利","https://weibo.com/u/5395677687","53万","300"));
-        list.add(new JVBean(R.drawable.j15,"b6","影视最时尚","https://weibo.com/u/5218850241","50万","200"));
+        list.add(new JVBean(R.drawable.j01,"a1","电视圈大哥","https://weibo.com/u/1812690611","300万","1800","15289321543","kmb50","金V"));
+        list.add(new JVBean(R.drawable.j02,"a2","娱乐神算子","https://weibo.com/u/2613127473","300万","1800","14873275085","okfq94","金V"));
+        list.add(new JVBean(R.drawable.j03,"a3","卫视剧透社","https://weibo.com/u/3945344172","153万","1200","14322678422","nbcr43","金V"));
+        list.add(new JVBean(R.drawable.j04,"a4","卫视小鲜肉","https://weibo.com/u/6040188827","11万","800","14567863245","mbgt54","金V"));
+        list.add(new JVBean(R.drawable.j05,"a5","娱乐主人公","https://weibo.com/u/6363118660","101万","700","13288675489","nbcs56","金V"));
+        list.add(new JVBean(R.drawable.j06,"a6","娱乐一番姐","https://weibo.com/u/5269405674","97万","600","18957664345","jnbv67","金V"));
+        list.add(new JVBean(R.drawable.j07,"a7","芒果文娱","https://weibo.com/u/6196420604","94万","600","15755436777","98jnoi","金V"));
+        list.add(new JVBean(R.drawable.j08,"a8","娱乐屋","https://weibo.com/u/6486325817","89万","500","17836543333","zaqogy","金V"));
+        list.add(new JVBean(R.drawable.j09,"a9","影视捣蛋","https://weibo.com/u/2865573464","84万","500","16432667543","mnvr56","金V"));
+        list.add(new JVBean(R.drawable.j10,"b1","娱评员","https://weibo.com/u/6523325161","71万","400","1433685543","mnts78","金V"));
+        list.add(new JVBean(R.drawable.j11,"b2","每日娱乐饭","https://weibo.com/u/6385017934","60万","300","16786543332","mnbr45","金V"));
+        list.add(new JVBean(R.drawable.j12,"b3","娱乐小少年","https://weibo.com/u/6079561687","57万","300","16542167877","mkvx85","金V"));
+        list.add(new JVBean(R.drawable.j13,"b4","影视路透社","https://weibo.com/u/6034913285","53万","300","17755437776","koln23","金V"));
+        list.add(new JVBean(R.drawable.j14,"b5","娱乐圈安利","https://weibo.com/u/5395677687","53万","300","16484367788","lbxa98","金V"));
+        list.add(new JVBean(R.drawable.j15,"b6","影视最时尚","https://weibo.com/u/5218850241","50万","200","18765443333","nbfdtgu","金V"));
 
 
 //        list.addAll(mPresenter.setJVData());

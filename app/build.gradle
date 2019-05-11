@@ -87,4 +87,6 @@ dependencies {
     //fragment
     implementation 'devlight.io:navigationtabbar:1.2.5'
 
+    //多状态布局显示
+    implementation 'com.github.Bakumon:StatusLayoutManager:1.0.4'
 }
