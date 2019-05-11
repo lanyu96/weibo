@@ -109,7 +109,7 @@
                 </LinearLayout>
                 <View style="@style/v_row_devide" />
                 <LinearLayout
-                    android:id="@+id/fragment_person_modify_password_ll"
+                    android:id="@+id/fragment_person_baojia_ll"
                     style="@style/my_ll_row">
 
                     <TextView
@@ -143,33 +143,33 @@
 
                 <View style="@style/v_row_devide" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp" />
 
-                <LinearLayout style="@style/my_ll_row"
-                    android:id="@+id/fragment_person_index_ll"
-                    >
 
-                    <TextView
-                        style="@style/my_tv_key"
 
-                        android:text="点击进入微博主页" />
-
-                    <TextView
-
-                        android:text=""
-                        style="@style/my_tv_value" />
-
-                    <ImageView style="@style/my_iv_click"
-                        android:visibility="visible"/>
-                </LinearLayout>
-
-                <View style="@style/v_row_devide" />
 
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <LinearLayout style="@style/my_ll_row"
+                android:id="@+id/fragment_person_index_ll"
+                >
 
+                <TextView
+                    style="@style/my_tv_key"
+                    android:layout_weight="6"
+                    android:text="点击进入微博主页" />
 
+                <TextView
+
+                    android:text=""
+                    style="@style/my_tv_value" />
+
+                <ImageView style="@style/my_iv_click"
+                    android:visibility="visible"/>
+            </LinearLayout>
+
+            <View style="@style/v_row_devide" />
 
 
         </LinearLayout>

@@ -12,6 +12,7 @@ import java.util.List;
 import mvp.com.zhou.mvp.MyApp;
 import mvp.com.zhou.mvp.R;
 import mvp.com.zhou.mvp.ui.bean.weibo.JVBean;
+import mvp.com.zhou.mvp.ui.dialog.weibo.InfoDialog;
 import mvp.com.zhou.mvp.ui.presenter.InfoPresenterImpl;
 import mvp.com.zhou.mvp.ui.view.base.BaseActivity;
 import mvp.com.zhou.mvp.utils.util.PreferencesService;
@@ -24,14 +25,14 @@ public class InfoViewActivity extends BaseActivity<InfoPresenterImpl> {
     private TextView tvFeild;
 
 
-
-
     private TextView styleTv;
 
     private TextView baojiaTv;
     private TextView jinTv;
     private TextView phoneTv;
     private LinearLayout indexLl;
+    private JVBean info;
+    private LinearLayout baojiaLl;
 
     @Override
     public InfoPresenterImpl initPresent() {
@@ -50,6 +51,7 @@ public class InfoViewActivity extends BaseActivity<InfoPresenterImpl> {
 //        selectStyleLl = (LinearLayout) findViewById(R.id.ll_person_select_style_ll);
 
         baojiaTv = (TextView) findViewById(R.id.tv_person_baojia);
+        baojiaLl = findViewById(R.id.fragment_person_baojia_ll);
 
         styleTv = (TextView) findViewById(R.id.tv_person_select_style_tv);
 
@@ -67,6 +69,7 @@ public class InfoViewActivity extends BaseActivity<InfoPresenterImpl> {
     @Override
     public void initEvent() {
         indexLl.setOnClickListener(this);
+        baojiaLl.setOnClickListener(this);
     }
 
     @Override
@@ -74,16 +77,15 @@ public class InfoViewActivity extends BaseActivity<InfoPresenterImpl> {
         Intent intent = getIntent();
 //        Bundle bundle = intent.getSerializableExtra("info");
 //        assert bundle != null;
-        JVBean info = (JVBean) intent.getSerializableExtra("info");
+        info = (JVBean) intent.getSerializableExtra("info");
 //
         tvPerson.setText(info.getName());
         tvFarm.setText(info.getWxNumber());
-        baojiaTv.setText(info.getMoney());
+        baojiaTv.setText("点击查看详细报价");
         tvFeild.setText(info.getWBName());
         styleTv.setText(info.getFenSi());
         jinTv.setText(info.getJinOrHuang());
         phoneTv.setText(info.getPhoneNumber());
-
 
 
     }
@@ -92,6 +94,19 @@ public class InfoViewActivity extends BaseActivity<InfoPresenterImpl> {
     public void onMyClick(View v) {
         switch (v.getId()) {
             case R.id.fragment_person_index_ll:
+                Intent intent = new Intent(this, indexViewActivity.class);
+                intent.putExtra("index", info.getIndexSrc());
+                startActivity(intent);
+                break;
+            case R.id.fragment_person_baojia_ll:
+                final InfoDialog dialog = new InfoDialog(this);
+                dialog.showInfoDialog(this, info.getName())
+                        .setListener(new InfoDialog.OnClickListener() {
+                            @Override
+                            public void OnFinishClickListener() {
+                                dialog.dismiss();
+                            }
+                        }).show();
 
                 break;
         }

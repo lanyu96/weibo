@@ -1,15 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <WebView
-        android:id="@+id/act_webview_wv"
+    <TextView
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/base_color"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="10dp"
+        android:text=" 报价详情"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#52a09d9d" />
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="35dp">
 
-        >
+        <LinearLayout
+            android:id="@+id/act_bj_01_ll"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-    </WebView>
+            <TextView
+                style="@style/style_main_list_key"
+                android:text="微博直发报价(/天) : " />
+
+            <TextView
+                android:id="@+id/act_1"
+                style="@style/style_main_list_value" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#52a09d9d" />
+
+        <LinearLayout
+            android:id="@+id/act_bj_02_ll"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/style_main_list_key"
+                android:text="微博转发报价(/天) : " />
+
+            <TextView
+                android:id="@+id/act_2"
+                style="@style/style_main_list_value" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#52a09d9d" />
+
+
+        <LinearLayout
+            android:id="@+id/act_bj_03_ll"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/style_main_list_key"
+                android:text="微博置顶报价(/天) : " />
+
+            <TextView
+                android:id="@+id/act_3"
+                style="@style/style_main_list_value" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#52a09d9d" />
+
+
+        <LinearLayout
+            android:id="@+id/act_bj_04_ll"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/style_main_list_key"
+                android:text="微博直发内部报价(/天) : " />
+
+            <TextView
+                android:id="@+id/act_4"
+                style="@style/style_main_list_value" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#52a09d9d" />
+
+
+        <LinearLayout
+            android:id="@+id/act_bj_05_ll"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/style_main_list_key"
+                android:text="微博转发内部报价(/天) : " />
+
+            <TextView
+                android:id="@+id/act_5"
+                style="@style/style_main_list_value" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#52a09d9d" />
+
+        <LinearLayout
+            android:id="@+id/act_bj_06_ll"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/style_main_list_key"
+                android:text="微博置顶内部报价(/天) : " />
+
+            <TextView
+                android:id="@+id/act_6"
+                style="@style/style_main_list_value" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#52a09d9d" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dialog_finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D790DFE4"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="10dp"
+        android:text=" 完成"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+
 </LinearLayout>

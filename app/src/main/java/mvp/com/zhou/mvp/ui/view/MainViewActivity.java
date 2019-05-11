@@ -64,7 +64,7 @@ public class MainViewActivity extends BaseActivity<MainPresenterImpl> implements
         navigationTabBar = findViewById(R.id.act_main_ntb_horizontal);
 
         //设置底部Tab 图标的标题
-        String[] titles = new String[]{ "金V","黄V", "我"};
+        String[] titles = new String[]{ "黄V","金V", "我"};
         ArrayList<View> views = new ArrayList<>();
         //设置每个View的不同背景
 //        int[] viewBgs = new int[]{Color.RED, Color.GRAY, Color.BLUE};
