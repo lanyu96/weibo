@@ -37,7 +37,7 @@ public class MainOperateViewFrag extends BaseFragment<MainOperatePresenterImpl> 
     @Override
     public void initView() {
         list = new ArrayList<>();
-        list.add(new JVBean(R.drawable.h01,"c1","娱乐界小花","https://weibo.com/u/6118573751","30万","100"));
+        list.add(new JVBean(R.drawable.h01,"c1","娱乐界小花","https://weibo.com/u/6118573751","30万","100","电话","微信号","金V"));
         list.add(new JVBean(R.drawable.h02,"c2","剧星娱乐","https://weibo.com/u/2013822757","29万","50"));
         list.add(new JVBean(R.drawable.h03,"c3","芒果练习生","https://weibo.com/u/3863471918","29万","50"));
         list.add(new JVBean(R.drawable.h04,"c4","八组娱乐姐","https://weibo.com/u/5929694220","23万","50"));

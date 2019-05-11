@@ -1,9 +1,10 @@
 package mvp.com.zhou.mvp.ui.bean.weibo;
 
-import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.Drawable;
 
-public class JVBean {
+import java.io.Serializable;
+
+public class JVBean implements Serializable {
     private int head;
     private String name;
     private String WBName;
@@ -12,6 +13,13 @@ public class JVBean {
     private String money;
 
     private Drawable icon;
+
+    private String phoneNumber;
+
+    private String wxNumber;
+
+    private String jinOrHuang;
+
 
     public JVBean() {
 
@@ -25,6 +33,42 @@ public class JVBean {
         this.indexSrc = indexSrc;
         this.fenSi = fenSi;
         this.money = money;
+    }
+
+    public JVBean(int head, String name, String WBName, String indexSrc, String fenSi, String money,  String phoneNumber, String wxNumber, String jinOrHuang) {
+        this.head = head;
+        this.name = name;
+        this.WBName = WBName;
+        this.indexSrc = indexSrc;
+        this.fenSi = fenSi;
+        this.money = money;
+        this.phoneNumber = phoneNumber;
+        this.wxNumber = wxNumber;
+        this.jinOrHuang = jinOrHuang;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getWxNumber() {
+        return wxNumber;
+    }
+
+    public void setWxNumber(String wxNumber) {
+        this.wxNumber = wxNumber;
+    }
+
+    public String getJinOrHuang() {
+        return jinOrHuang;
+    }
+
+    public void setJinOrHuang(String jinOrHuang) {
+        this.jinOrHuang = jinOrHuang;
     }
 
     public Drawable getIcon() {

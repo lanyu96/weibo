@@ -55,14 +55,11 @@ public class JinVAdapter extends RecyclerView.Adapter<JinVAdapter.JinVViewHodler
                 int adapterPosition = jinVViewHodler.getAdapterPosition();
 
                 Intent intent = new Intent(context, InfoViewActivity.class);
-                JVBean bean = new JVBean();
-                bean.setName("123");
+                JVBean bean = list.get(adapterPosition);
 
-                List<JVBean> list = new ArrayList<>();
-                list.add(bean);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("info",bean);
-                intent.putExtra("vInfo","aaa");
+                intent.putExtras(bundle);
                 context.startActivity(intent);
 //                new InfoDialog().showInfoDialog(context, list.get(adapterPosition))
 //                .setListener(new InfoDialog.OnClickListener() {
