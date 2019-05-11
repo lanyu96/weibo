@@ -60,9 +60,7 @@ public class InfoDialog extends Dialog{
         finishTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (listener != null) {
-                    listener.OnFinishClickListener();
-                }
+               dialog.dismiss();
             }
         });
         a01 = view.findViewById(R.id.act_1);

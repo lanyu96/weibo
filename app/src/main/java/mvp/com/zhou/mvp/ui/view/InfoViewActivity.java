@@ -104,7 +104,6 @@ public class InfoViewActivity extends BaseActivity<InfoPresenterImpl> {
                         .setListener(new InfoDialog.OnClickListener() {
                             @Override
                             public void OnFinishClickListener() {
-                                dialog.dismiss();
                             }
                         }).show();
 
