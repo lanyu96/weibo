@@ -51,6 +51,16 @@ public class DBUtils {
     /**
      * 修改数据
      */
+    /*
+      String set = "phoneNumber=? ,wxNumber=?,wbName=?,money=?";
+      String where = "name=? ";
+      String[] values = {phoneEt.getText().toString().trim()
+                ,wxNumberEt.getText().toString().trim()
+                ,wbNameEt.getText().toString().trim()
+                ,baojiaEt.getText().toString().trim()
+                ,nameTv.getText().toString()};
+     dbUtils.update(set,where,values);
+     */
     public void update(String set, String where, String[] values) {
         db.execSQL("update " + TABLE_NAME + " set " + set + " where " + where, values);
     }
