@@ -53,12 +53,14 @@ public class ChangeInfo extends AppCompatActivity {
         saveTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String set = "phoneNumber=? ,wxNumber=?,wbName=?,money=?";
+                String where = "name=? ";
                 String[] str = {phoneEt.getText().toString().trim()
                 ,wxNumberEt.getText().toString().trim()
                 ,wbNameEt.getText().toString().trim()
                 ,baojiaEt.getText().toString().trim()
                 ,nameTv.getText().toString()};
-                dbUtils.update(str);
+                dbUtils.update(set,where,str);
                 finish();
             }
         });

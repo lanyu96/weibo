@@ -23,6 +23,11 @@ public class DBUtils {
     /**
      * 添加数据
      */
+    /*
+    例如
+     dbUtils.addData(new String[]{"name", "phoneNumber", "wxNumber", "wbName", "money"}
+                    , new String[]{"b3", "手机号", "微信号", "啊啊啊", "300"});
+     */
     public void addData(String[] key, String[] values) {
         ContentValues contentValues = new ContentValues();
         for (int i = 0; i < key.length; i++) {
@@ -35,8 +40,10 @@ public class DBUtils {
     /**
      * 删除数据
      */
+    //例如 ： dbUtils.delData("userName=?",new String[]{user.getName()})
     public int delData(String where, String[] values) {
         int del_data;
+
         del_data = db.delete(TABLE_NAME, where, values);
         return del_data;
     }
@@ -44,8 +51,8 @@ public class DBUtils {
     /**
      * 修改数据
      */
-    public void update(String[] values) {
-        db.execSQL("update " + TABLE_NAME + " set phoneNumber=? ,wxNumber=?,wbName=?,money=?where name=? ", values);
+    public void update(String set, String where, String[] values) {
+        db.execSQL("update " + TABLE_NAME + " set " + set + " where " + where, values);
     }
 
     /**
@@ -54,7 +61,7 @@ public class DBUtils {
     public List<JVBean> queryData() {
         List<JVBean> list = new ArrayList<>();
         Cursor cursor = db.rawQuery("select name,phoneNumber,wxNumber,money,wbName" +
-                " from "+TABLE_NAME, null);
+                " from " + TABLE_NAME, null);
         while (cursor.moveToNext()) {
             String name = cursor.getString(0);
             String phoneNumber = cursor.getString(1);
