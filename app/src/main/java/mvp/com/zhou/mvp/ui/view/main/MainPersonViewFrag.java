@@ -19,10 +19,13 @@ import java.util.List;
 import mvp.com.zhou.mvp.MyApp;
 import mvp.com.zhou.mvp.R;
 import mvp.com.zhou.mvp.constant.SPConstants;
+import mvp.com.zhou.mvp.database.DBUtils;
 import mvp.com.zhou.mvp.ui.bean.eventbus.StyleSelectMessage;
+import mvp.com.zhou.mvp.ui.bean.weibo.JVBean;
 import mvp.com.zhou.mvp.ui.callback.CallBackPositionListener;
 import mvp.com.zhou.mvp.ui.dialog.DialogUtils;
 import mvp.com.zhou.mvp.ui.presenter.main.MainPersonPresenterImpl;
+import mvp.com.zhou.mvp.ui.view.ChangeInfo;
 import mvp.com.zhou.mvp.ui.view.LoginViewActivity;
 import mvp.com.zhou.mvp.ui.view.SplashActivity;
 import mvp.com.zhou.mvp.ui.view.base.BaseFragment;
@@ -52,6 +55,8 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
     private TextView baojiaTv;
     private TextView jinTv;
     private TextView phoneTv;
+    private DBUtils dbUtils;
+    private LinearLayout changeInfoLl;
 
     @Override
     public MainPersonPresenterImpl initPresent() {
@@ -89,21 +94,44 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
         phoneTv = (TextView) findViewById(R.id.tv_person_real_name);
         mList = new ArrayList<>();
 
+        changeInfoLl = (LinearLayout) findViewById(R.id.fragment_person_set_info_ll);
+
+        dbUtils = new DBUtils(getContext());
+        List<JVBean> list = dbUtils.queryData();
+        if (list.size() == 0 || list.get(0).getName().equals("")) {
+            dbUtils.addData(new String[]{"name", "phoneNumber", "wxNumber", "wbName", "money"}
+                    , new String[]{"b3", "17853723426", "xintian1015521", "娱乐小少年", "300"});
+            queryInfo();
+        } else {
+            queryInfo();
+
+        }
+
+//        if (!(list.get(0).getName().equals("b3") || list.get(0).getName().equals("芒果娱乐宣传"))) {
+//
+//        }
 
     }
 
-    @Override
-    public void initEvent() {
-        llFarm.setOnClickListener(this);
-        llFeild.setOnClickListener(this);
-        tvLogout.setOnClickListener(this);
-//        selectStyleLl.setOnClickListener(this);
-        getUpdate.setOnClickListener(this);
-        modify_password.setOnClickListener(this);
-    }
+//    @Override
+//    public void onPause() {
+//        super.onPause();
+//        queryInfo();
+//    }
 
     @Override
-    public void initData() {
+    public void onResume() {
+        super.onResume();
+        queryInfo();
+    }
+
+    private void queryInfo() {
+        List<JVBean> list1 = dbUtils.queryData();
+        String name = list1.get(0).getName();
+        String phoneNumber = list1.get(0).getPhoneNumber();
+        String wxNumber = list1.get(0).getWxNumber();
+        String wbName = list1.get(0).getWBName();
+        String money = list1.get(0).getMoney();
         if (MyApp.getPreferencesService().getValue("user", "").equals("芒果娱乐宣传")) {
             tvPerson.setText(MyApp.getPreferencesService().getValue("user",""));
             phoneTv.setText("13567423654");
@@ -114,15 +142,31 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
             jinTv.setText(" - ");
         } else if (MyApp.getPreferencesService().getValue("user", "").equals("b3")) {
             tvPerson.setText(MyApp.getPreferencesService().getValue("user",""));
-            tvFarm.setText("xintian1015521");
-            baojiaTv.setText("300");
-            tvFeild.setText("娱乐小少年");
+            tvFarm.setText(wxNumber);
+            baojiaTv.setText(money);
+            tvFeild.setText(wbName);
             styleTv.setText("57万");
             jinTv.setText("金");
-            phoneTv.setText("17853723426");
+            phoneTv.setText(phoneNumber);
 
 
         }
+    }
+
+    @Override
+    public void initEvent() {
+        llFarm.setOnClickListener(this);
+        llFeild.setOnClickListener(this);
+        tvLogout.setOnClickListener(this);
+//        selectStyleLl.setOnClickListener(this);
+        getUpdate.setOnClickListener(this);
+        modify_password.setOnClickListener(this);
+        changeInfoLl.setOnClickListener(this);
+    }
+
+    @Override
+    public void initData() {
+
 
 
 //        tvFarm.setText(MyApp.getPreferencesService().getValue(SPConstants.FARM_NAME,""));
@@ -177,6 +221,9 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
 //                startActivity(intent);
 
                 break;
+            case R.id.fragment_person_set_info_ll:
+                startActivity(new Intent(getContext(), ChangeInfo.class));
+                break;
         }
     }
 
@@ -200,4 +247,9 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
         tvFeild.setText(field);
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        dbUtils.setClose();
+    }
 }

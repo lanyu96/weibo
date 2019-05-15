@@ -223,6 +223,24 @@
                 </LinearLayout>
 
                 <View style="@style/v_row_devide" />
+
+                <LinearLayout
+                    android:id="@+id/fragment_person_set_info_ll"
+                    style="@style/my_ll_row">
+
+                    <TextView
+                        style="@style/my_tv_key"
+
+                        android:text="更改信息" />
+
+                    <TextView
+                        android:text="点击更改"
+                        style="@style/my_tv_value" />
+
+                    <ImageView style="@style/my_iv_click" />
+                </LinearLayout>
+
+                <View style="@style/v_row_devide" />
             </LinearLayout>
 
 

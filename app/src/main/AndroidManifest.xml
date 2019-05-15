@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="mvp.com.zhou.mvp"
@@ -31,36 +32,29 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.view.ChangeInfo"></activity>
         <activity
             android:name=".ui.view.MainViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
-            tools:targetApi="cupcake">
-
-        </activity>
+            tools:targetApi="cupcake"></activity>
         <activity
             android:name=".ui.view.LoginViewActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait">
-
-        </activity>
-
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.view.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FixSystemWindowTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ui.view.InfoViewActivity" />
-
         <activity android:name=".ui.view.indexViewActivity" />
     </application>
 
