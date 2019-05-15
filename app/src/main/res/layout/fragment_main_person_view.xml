@@ -179,7 +179,7 @@
                     <TextView
                         style="@style/my_tv_key"
 
-                        android:text="报        价" />
+                        android:text="平均报价" />
 
                     <TextView
                         android:id="@+id/tv_person_baojia"
