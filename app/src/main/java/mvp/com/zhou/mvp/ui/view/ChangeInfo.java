@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import mvp.com.zhou.mvp.R;
-import mvp.com.zhou.mvp.database.DBUtils;
+import mvp.com.zhou.mvp.database.JDBUtils;
 import mvp.com.zhou.mvp.ui.bean.weibo.JVBean;
 
 public class ChangeInfo extends AppCompatActivity {
@@ -20,7 +20,7 @@ public class ChangeInfo extends AppCompatActivity {
     private EditText wbNameEt;
     private EditText baojiaEt;
     private TextView saveTv;
-    private DBUtils dbUtils;
+    private JDBUtils dbUtils;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class ChangeInfo extends AppCompatActivity {
         wbNameEt = findViewById(R.id.tv_person_wb);
         baojiaEt = findViewById(R.id.tv_person_baojia);
 
-        dbUtils = new DBUtils(this);
+        dbUtils = new JDBUtils(this);
 
         List<JVBean> list1 = dbUtils.queryData();
         String name = list1.get(0).getName();

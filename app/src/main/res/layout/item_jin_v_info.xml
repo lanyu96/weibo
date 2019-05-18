@@ -70,11 +70,13 @@
         <TextView
 
             style="@style/item_jin_v_key"
+            android:visibility="invisible"
             android:text="粉丝 :" />
 
         <TextView
 
             style="@style/item_jin_v_value"
+            android:visibility="invisible"
             android:id="@+id/item_jin_v_info_love_tv"
             android:text="value" />
 
@@ -85,12 +87,14 @@
         <TextView
 
             style="@style/item_jin_v_key"
+            android:visibility="invisible"
             android:text="报价 :" />
 
         <TextView
 
             style="@style/item_jin_v_value"
             android:id="@+id/item_jin_v_info_money_tv"
+            android:visibility="invisible"
             android:text="value" />
 
 

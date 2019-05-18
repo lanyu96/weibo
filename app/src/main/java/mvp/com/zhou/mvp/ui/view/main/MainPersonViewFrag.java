@@ -1,37 +1,28 @@
 package mvp.com.zhou.mvp.ui.view.main;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.SystemClock;
-import android.support.annotation.UiThread;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.greenrobot.eventbus.EventBus;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import mvp.com.zhou.mvp.MyApp;
 import mvp.com.zhou.mvp.R;
-import mvp.com.zhou.mvp.constant.SPConstants;
-import mvp.com.zhou.mvp.database.DBUtils;
-import mvp.com.zhou.mvp.ui.bean.eventbus.StyleSelectMessage;
+import mvp.com.zhou.mvp.database.JDBUtils;
 import mvp.com.zhou.mvp.ui.bean.weibo.JVBean;
 import mvp.com.zhou.mvp.ui.callback.CallBackPositionListener;
 import mvp.com.zhou.mvp.ui.dialog.DialogUtils;
 import mvp.com.zhou.mvp.ui.presenter.main.MainPersonPresenterImpl;
 import mvp.com.zhou.mvp.ui.view.ChangeInfo;
 import mvp.com.zhou.mvp.ui.view.LoginViewActivity;
-import mvp.com.zhou.mvp.ui.view.SplashActivity;
 import mvp.com.zhou.mvp.ui.view.base.BaseFragment;
 import mvp.com.zhou.mvp.utils.util.PreferencesService;
-
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 
 public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> implements MainPersonView {
@@ -55,7 +46,7 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
     private TextView baojiaTv;
     private TextView jinTv;
     private TextView phoneTv;
-    private DBUtils dbUtils;
+    private JDBUtils dbUtils;
     private LinearLayout changeInfoLl;
 
     @Override
@@ -96,7 +87,7 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
 
         changeInfoLl = (LinearLayout) findViewById(R.id.fragment_person_set_info_ll);
 
-        dbUtils = new DBUtils(getContext());
+        dbUtils = new JDBUtils(getContext());
         List<JVBean> list = dbUtils.queryData();
         if (list.size() == 0 || list.get(0).getName().equals("")) {
             dbUtils.addData(new String[]{"name", "phoneNumber", "wxNumber", "wbName", "money"}

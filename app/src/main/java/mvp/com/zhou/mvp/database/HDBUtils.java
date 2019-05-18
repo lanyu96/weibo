@@ -10,12 +10,12 @@ import java.util.List;
 
 import mvp.com.zhou.mvp.ui.bean.weibo.JVBean;
 
-public class DBUtils {
+public class HDBUtils {
     private DBHelper dbHelper;
     private SQLiteDatabase db;
-    private static final String TABLE_NAME = "peopleInfo";
+    private static final String TABLE_NAME = "HpeopleInfo";
 
-    public DBUtils(Context context) {
+    public HDBUtils(Context context) {
         dbHelper = new DBHelper(context);
         db = dbHelper.getWritableDatabase();
     }
@@ -98,6 +98,5 @@ public class DBUtils {
             db.close();
         }
     }
-
 
 }

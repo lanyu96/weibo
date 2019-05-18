@@ -20,13 +20,31 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String InfoSQL = "CREATE TABLE peopleInfo(id varchar(10) primary key , " +
+        String JinInfoSQL = "CREATE TABLE JpeopleInfo(id varchar(10) primary key , " +
                 "name test ," +
                 "phoneNumber test ," +
                 "wxNumber test ," +
                 "wbName test," +
-                "money test)";
-        db.execSQL(InfoSQL);
+                "fensi test," +
+                "money test," +
+                "JH test," +
+                "wbIndex test)";
+        String HuangInfoSQL = "CREATE TABLE HpeopleInfo(id varchar(10) primary key , " +
+                "name test ," +
+                "phoneNumber test ," +
+                "wxNumber test ," +
+                "wbName test," +
+                "fensi test," +
+                "money test," +
+                "JH test," +
+                "wbIndex test)";
+        String XuanChuanInfoSQL = "CREATE TABLE XpeopleInfo(id varchar(10) primary key , " +
+                "name test ," +
+                "phoneNumber test ," +
+                "wxNumber test)";
+        db.execSQL(JinInfoSQL);
+        db.execSQL(HuangInfoSQL);
+        db.execSQL(XuanChuanInfoSQL);
 
 
     }
