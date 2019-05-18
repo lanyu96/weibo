@@ -70,20 +70,28 @@ public class HDBUtils {
      */
     public List<JVBean> queryData() {
         List<JVBean> list = new ArrayList<>();
-        Cursor cursor = db.rawQuery("select name,phoneNumber,wxNumber,money,wbName" +
+        Cursor cursor = db.rawQuery("select icon,name,phoneNumber,wxNumber,wbName,fensi,money,JH,wbIndex" +
                 " from " + TABLE_NAME, null);
         while (cursor.moveToNext()) {
-            String name = cursor.getString(0);
-            String phoneNumber = cursor.getString(1);
-            String wxNumber = cursor.getString(2);
-            String money = cursor.getString(3);
+            int icon = Integer.parseInt(cursor.getString(0));
+            String name = cursor.getString(1);
+            String phoneNumber = cursor.getString(2);
+            String wxNumber = cursor.getString(3);
             String wbName = cursor.getString(4);
+            String fensi = cursor.getString(5);
+            String money = cursor.getString(6);
+            String JH = cursor.getString(7);
+            String wbIndex = cursor.getString(8);
             JVBean user = new JVBean();
             user.setName(name);
             user.setPhoneNumber(phoneNumber);
             user.setWxNumber(wxNumber);
             user.setMoney(money);
             user.setWBName(wbName);
+            user.setHead(icon);
+            user.setFenSi(fensi);
+            user.setJinOrHuang(JH);
+            user.setIndexSrc(wbIndex);
             list.add(user);
         }
 

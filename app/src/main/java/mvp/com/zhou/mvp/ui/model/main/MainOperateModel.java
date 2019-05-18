@@ -6,6 +6,7 @@ import android.content.Context;
 import java.util.List;
 
 import mvp.com.zhou.mvp.ui.bean.MainFunction;
+import mvp.com.zhou.mvp.ui.bean.weibo.JVBean;
 import mvp.com.zhou.mvp.ui.model.base.BaseModel;
 
 
@@ -19,4 +20,5 @@ public interface MainOperateModel extends BaseModel {
     void addFunction(List<MainFunction> mList, Context context);
 
 
+//    List<JVBean> initInfoData();
 }

@@ -21,6 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String JinInfoSQL = "CREATE TABLE JpeopleInfo(id varchar(10) primary key , " +
+                "icon test," +
                 "name test ," +
                 "phoneNumber test ," +
                 "wxNumber test ," +
@@ -30,6 +31,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "JH test," +
                 "wbIndex test)";
         String HuangInfoSQL = "CREATE TABLE HpeopleInfo(id varchar(10) primary key , " +
+                "icon test," +
                 "name test ," +
                 "phoneNumber test ," +
                 "wxNumber test ," +

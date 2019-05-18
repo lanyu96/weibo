@@ -2,9 +2,13 @@ package mvp.com.zhou.mvp.ui.model.main;
 
 import android.content.Context;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import mvp.com.zhou.mvp.R;
+import mvp.com.zhou.mvp.database.HDBUtils;
 import mvp.com.zhou.mvp.ui.bean.MainFunction;
+import mvp.com.zhou.mvp.ui.bean.weibo.JVBean;
 import mvp.com.zhou.mvp.ui.model.base.BaseModelImpl;
 
 
@@ -14,6 +18,8 @@ import mvp.com.zhou.mvp.ui.model.base.BaseModelImpl;
  * @Description:
  */
 public class MainOperateModelImpl extends BaseModelImpl implements MainOperateModel {
+
+    private List<JVBean> list;
 
     public void addFunction(List<MainFunction> mList, Context context) {
         mList.clear();
@@ -58,6 +64,8 @@ public class MainOperateModelImpl extends BaseModelImpl implements MainOperateMo
         }
 
     }
+
+
 
 
 }

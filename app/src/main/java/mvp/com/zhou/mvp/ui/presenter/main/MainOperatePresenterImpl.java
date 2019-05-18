@@ -4,7 +4,9 @@ package mvp.com.zhou.mvp.ui.presenter.main;
 import java.util.ArrayList;
 import java.util.List;
 
+import mvp.com.zhou.mvp.database.HDBUtils;
 import mvp.com.zhou.mvp.ui.bean.MainFunction;
+import mvp.com.zhou.mvp.ui.bean.weibo.JVBean;
 import mvp.com.zhou.mvp.ui.model.main.MainOperateModel;
 import mvp.com.zhou.mvp.ui.model.main.MainOperateModelImpl;
 import mvp.com.zhou.mvp.ui.presenter.base.BasePresenterImpl;
@@ -34,6 +36,16 @@ public class MainOperatePresenterImpl extends BasePresenterImpl<MainOperateView,
             mModel.addFunction(mList, getView().getContext());
         }
         return mList;
+    }
+
+    public void initHuangInfoData() {
+//        HDBUtils hdbUtils = new HDBUtils(getView().getContext());
+//        List<JVBean> list = mModel.initInfoData();
+//        for (int i = 0; i < list.size(); i++) {
+//            JVBean bean = list.get(i);
+//
+//        }
+
     }
 
 }

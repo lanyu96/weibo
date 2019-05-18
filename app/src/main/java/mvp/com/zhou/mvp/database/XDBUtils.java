@@ -70,20 +70,16 @@ public class XDBUtils {
      */
     public List<JVBean> queryData() {
         List<JVBean> list = new ArrayList<>();
-        Cursor cursor = db.rawQuery("select name,phoneNumber,wxNumber,money,wbName" +
+        Cursor cursor = db.rawQuery("select name,phoneNumber,wxNumber" +
                 " from " + TABLE_NAME, null);
         while (cursor.moveToNext()) {
             String name = cursor.getString(0);
             String phoneNumber = cursor.getString(1);
             String wxNumber = cursor.getString(2);
-            String money = cursor.getString(3);
-            String wbName = cursor.getString(4);
             JVBean user = new JVBean();
             user.setName(name);
             user.setPhoneNumber(phoneNumber);
             user.setWxNumber(wxNumber);
-            user.setMoney(money);
-            user.setWBName(wbName);
             list.add(user);
         }
 

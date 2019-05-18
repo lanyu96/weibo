@@ -90,8 +90,8 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
         dbUtils = new JDBUtils(getContext());
         List<JVBean> list = dbUtils.queryData();
         if (list.size() == 0 || list.get(0).getName().equals("")) {
-            dbUtils.addData(new String[]{"name", "phoneNumber", "wxNumber", "wbName", "money"}
-                    , new String[]{"b3", "17853723426", "xintian1015521", "娱乐小少年", "300"});
+//            dbUtils.addData(new String[]{"name", "phoneNumber", "wxNumber", "wbName", "money"}
+//                    , new String[]{"b3", "17853723426", "xintian1015521", "娱乐小少年", "300"});
             queryInfo();
         } else {
             queryInfo();
@@ -118,11 +118,11 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
 
     private void queryInfo() {
         List<JVBean> list1 = dbUtils.queryData();
-        String name = list1.get(0).getName();
-        String phoneNumber = list1.get(0).getPhoneNumber();
-        String wxNumber = list1.get(0).getWxNumber();
-        String wbName = list1.get(0).getWBName();
-        String money = list1.get(0).getMoney();
+        String name = list1.get(11).getName();
+        String phoneNumber = list1.get(11).getPhoneNumber();
+        String wxNumber = list1.get(11).getWxNumber();
+        String wbName = list1.get(11).getWBName();
+        String money = list1.get(11).getMoney();
         if (MyApp.getPreferencesService().getValue("user", "").equals("芒果娱乐宣传")) {
             tvPerson.setText(MyApp.getPreferencesService().getValue("user",""));
             phoneTv.setText("13567423654");

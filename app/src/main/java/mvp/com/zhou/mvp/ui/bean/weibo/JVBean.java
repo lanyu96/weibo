@@ -26,16 +26,13 @@ public class JVBean implements Serializable {
     }
 
 
-    public JVBean(int head, String name, String WBName, String indexSrc, String fenSi, String money) {
-        this.head = head;
+    public JVBean(String name, String phoneNumber, String wxNumber) {
         this.name = name;
-        this.WBName = WBName;
-        this.indexSrc = indexSrc;
-        this.fenSi = fenSi;
-        this.money = money;
+        this.phoneNumber = phoneNumber;
+        this.wxNumber = wxNumber;
     }
 
-    public JVBean(int head, String name, String WBName, String indexSrc, String fenSi, String money,  String phoneNumber, String wxNumber, String jinOrHuang) {
+    public JVBean(int head, String name, String WBName, String indexSrc, String fenSi, String money, String phoneNumber, String wxNumber, String jinOrHuang) {
         this.head = head;
         this.name = name;
         this.WBName = WBName;
