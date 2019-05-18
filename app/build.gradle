@@ -89,4 +89,7 @@ dependencies {
 
     //多状态布局显示
     implementation 'com.github.Bakumon:StatusLayoutManager:1.0.4'
+
+    //单选按钮
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
 }

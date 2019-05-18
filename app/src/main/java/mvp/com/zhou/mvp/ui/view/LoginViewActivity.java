@@ -126,6 +126,8 @@ public class LoginViewActivity extends BaseActivity<LoginPresenterImpl> implemen
                         showToast("请输入密码");
                         break;
                     }
+
+
                     if (etUser.getText().toString().trim().equals("b3")) {
                         if (etPassword.getText().toString().trim().equals("123456")) {
                             MyApp.getPreferencesService().save("user", etUser.getText().toString().trim());

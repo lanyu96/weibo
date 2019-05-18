@@ -65,6 +65,18 @@ public class HDBUtils {
         db.execSQL("update " + TABLE_NAME + " set " + set + " where " + where, values);
     }
 
+
+    /**
+     * 查询用户是否存在
+     */
+    public boolean isRight(String nameStr) {
+
+        db.execSQL("select name from" + TABLE_NAME +" where name=?",new String[]{nameStr});
+
+        return true;
+    }
+
+
     /**
      * 查询数据
      */

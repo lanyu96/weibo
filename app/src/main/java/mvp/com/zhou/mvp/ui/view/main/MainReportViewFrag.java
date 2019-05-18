@@ -91,17 +91,10 @@ public class MainReportViewFrag extends BaseFragment<MainReportPresenterImpl> im
     public void onResume() {
         super.onResume();
         List<JVBean> list1 = dbUtils.queryData();
-
-        list = new ArrayList<>();
+        list.clear();
         list.addAll(list1);
 
-
-        jinVRv = (RecyclerView) findViewById(R.id.jinV_number_rv);
-        jinVRv.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
-
-        adapter = new JinVAdapter(getContext(), list);
-        jinVRv.setHasFixedSize(true);
-        jinVRv.addItemDecoration(new SimpleDividerItemDecoration(getContext(),20, 1));
+        adapter.notifyDataSetChanged();
         jinVRv.setAdapter(adapter);
     }
 

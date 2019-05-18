@@ -10,7 +10,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:paddingTop="10dp"
+        android:paddingTop="30dp"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
         android:background="@color/blue"
@@ -45,8 +45,9 @@
                     <TextView
                         style="@style/my_tv_key"
                         android:text="账        号" />
-                    <TextView
+                    <EditText
                         android:id="@+id/tv_person_name"
+                        android:hint="请输入"
                         style="@style/my_tv_value" />
 
                     <ImageView
@@ -62,6 +63,7 @@
                         android:text="手  机  号" />
                     <EditText
                         android:id="@+id/tv_person_phone"
+                        android:hint="请输入"
                         style="@style/my_tv_value" />
                     <ImageView
                         style="@style/my_iv_click"
@@ -84,7 +86,7 @@
 
                     <EditText
                         android:id="@+id/tv_person_wx"
-
+                        android:hint="请输入"
                         style="@style/my_tv_value" />
 
                     <ImageView style="@style/my_iv_click"
@@ -105,6 +107,7 @@
 
                     <EditText
                         android:id="@+id/tv_person_wb"
+                        android:hint="请输入"
                         style="@style/my_tv_value" />
 
                     <ImageView style="@style/my_iv_click"
@@ -123,7 +126,84 @@
 
                     <EditText
                         android:id="@+id/tv_person_baojia"
+                        android:hint="？？？元"
                         style="@style/my_tv_value" />
+
+                    <ImageView style="@style/my_iv_click"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+                <View style="@style/v_row_devide" />
+
+                <LinearLayout
+                    style="@style/my_ll_row">
+
+                    <TextView
+                        style="@style/my_tv_key"
+
+                        android:text="粉        丝" />
+
+                    <EditText
+                        android:id="@+id/tv_person_fensi"
+                        android:hint="请填写数字(单位是万)"
+                        style="@style/my_tv_value" />
+
+                    <ImageView style="@style/my_iv_click"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+                <View style="@style/v_row_devide" />
+
+
+                <LinearLayout
+
+                    style="@style/my_ll_row">
+
+                    <TextView
+                        style="@style/my_tv_key"
+
+                        android:text="金   /   黄" />
+
+                    <EditText
+                        android:id="@+id/tv_person_jin_huang"
+                        android:hint="请输入"
+                        style="@style/my_tv_value" />
+
+                    <ImageView style="@style/my_iv_click"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+                <View style="@style/v_row_devide" />
+
+                <LinearLayout
+
+                    style="@style/my_ll_row">
+
+                    <TextView
+                        style="@style/my_tv_key"
+
+                        android:text="主页地址" />
+
+                    <EditText
+                        android:id="@+id/tv_person_index"
+                        android:hint="填写以https开头的地址"
+                        style="@style/my_tv_value" />
+
+                    <ImageView style="@style/my_iv_click"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+                <View style="@style/v_row_devide" />
+
+                <LinearLayout
+
+                    style="@style/my_ll_row">
+
+                    <TextView
+                        style="@style/my_tv_key"
+
+                        android:text="是否宣传账号" />
+
+                    <com.suke.widget.SwitchButton
+                        android:id="@+id/tv_person_switch_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <ImageView style="@style/my_iv_click"
                         android:visibility="invisible"/>
@@ -141,7 +221,7 @@
                 android:layout_marginTop="25dp"
                 android:background="@color/white"
                 android:gravity="center"
-                android:text="确认修改"
+                android:text="注册"
                 android:textColor="@color/gray_deep"
                 android:textSize="14sp" />
         </LinearLayout>
