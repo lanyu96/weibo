@@ -176,6 +176,18 @@
                         android:text="@string/login_space"
                         android:textColor="@color/white"
                         android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/login_bt_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="#54bb72c9"
+                        android:gravity="center"
+                        android:text="注册"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

@@ -24,6 +24,7 @@ public class LoginViewActivity extends BaseActivity<LoginPresenterImpl> implemen
     private Button btLogin;
     private EditText etUser;
     private EditText etPassword;
+    private Button registerBtn;
 
 
     @Override
@@ -37,6 +38,7 @@ public class LoginViewActivity extends BaseActivity<LoginPresenterImpl> implemen
         btLogin =  findViewById(R.id.login_bt_login);
         etUser =  findViewById(R.id.login_et_userName);
         etPassword =  findViewById(R.id.login_et_password);
+        registerBtn = findViewById(R.id.login_bt_register);
 
 
     }
@@ -44,6 +46,7 @@ public class LoginViewActivity extends BaseActivity<LoginPresenterImpl> implemen
     @Override
     public void initEvent() {
         btLogin.setOnClickListener(this);
+        registerBtn.setOnClickListener(this);
     }
 
     @Override
@@ -110,6 +113,9 @@ public class LoginViewActivity extends BaseActivity<LoginPresenterImpl> implemen
     public void onMyClick(View v) {
 
         switch (v.getId()) {
+            case R.id.login_bt_register:
+                startActivity(new Intent(this, RegisterViewActivity.class));
+                break;
             case R.id.login_bt_login://登陆按钮
                 if (JUMPLOGIN) {
                     if (etUser.getText().toString().trim().equals("")) {

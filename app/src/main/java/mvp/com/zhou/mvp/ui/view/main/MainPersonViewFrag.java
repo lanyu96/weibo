@@ -123,6 +123,8 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
         String wxNumber = list1.get(11).getWxNumber();
         String wbName = list1.get(11).getWBName();
         String money = list1.get(11).getMoney();
+        String fensi = list1.get(11).getFenSi();
+        String jh = list1.get(11).getJinOrHuang();
         if (MyApp.getPreferencesService().getValue("user", "").equals("芒果娱乐宣传")) {
             tvPerson.setText(MyApp.getPreferencesService().getValue("user",""));
             phoneTv.setText("13567423654");
@@ -131,13 +133,13 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
             tvFeild.setText(" - ");
             styleTv.setText(" - ");
             jinTv.setText(" - ");
-        } else if (MyApp.getPreferencesService().getValue("user", "").equals("b3")) {
-            tvPerson.setText(MyApp.getPreferencesService().getValue("user",""));
+        } else {
+            tvPerson.setText(name);
             tvFarm.setText(wxNumber);
             baojiaTv.setText(money);
             tvFeild.setText(wbName);
-            styleTv.setText("57万");
-            jinTv.setText("金");
+            styleTv.setText(fensi);
+            jinTv.setText(jh);
             phoneTv.setText(phoneNumber);
 
 

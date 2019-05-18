@@ -36,11 +36,11 @@ public class ChangeInfo extends AppCompatActivity {
         dbUtils = new JDBUtils(this);
 
         List<JVBean> list1 = dbUtils.queryData();
-        String name = list1.get(0).getName();
-        String phoneNumber = list1.get(0).getPhoneNumber();
-        String wxNumber = list1.get(0).getWxNumber();
-        String wbName = list1.get(0).getWBName();
-        String money = list1.get(0).getMoney();
+        String name = list1.get(11).getName();
+        String phoneNumber = list1.get(11).getPhoneNumber();
+        String wxNumber = list1.get(11).getWxNumber();
+        String wbName = list1.get(11).getWBName();
+        String money = list1.get(11).getMoney();
 
         nameTv.setText(name);
         phoneEt.setText(phoneNumber);
