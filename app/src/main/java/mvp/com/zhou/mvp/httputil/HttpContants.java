@@ -26,5 +26,7 @@ public class HttpContants {
 
     public static boolean JUMPLOGIN = true;
 
+    public static int dbNumber = 0;
+
 
 }

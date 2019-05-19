@@ -11,12 +11,18 @@ import java.util.List;
 
 import mvp.com.zhou.mvp.MyApp;
 import mvp.com.zhou.mvp.R;
+import mvp.com.zhou.mvp.database.HDBUtils;
+import mvp.com.zhou.mvp.database.JDBUtils;
+import mvp.com.zhou.mvp.database.XDBUtils;
 import mvp.com.zhou.mvp.ui.callback.CallBackPositionListener;
 import mvp.com.zhou.mvp.ui.dialog.DialogUtils;
 import mvp.com.zhou.mvp.ui.presenter.LoginPresenterImpl;
 import mvp.com.zhou.mvp.ui.view.base.BaseActivity;
+import mvp.com.zhou.mvp.utils.ScreenUtils;
+import mvp.com.zhou.mvp.utils.Slider;
 
 import static mvp.com.zhou.mvp.httputil.HttpContants.JUMPLOGIN;
+import static mvp.com.zhou.mvp.httputil.HttpContants.dbNumber;
 
 
 public class LoginViewActivity extends BaseActivity<LoginPresenterImpl> implements LoginView {
@@ -25,6 +31,9 @@ public class LoginViewActivity extends BaseActivity<LoginPresenterImpl> implemen
     private EditText etUser;
     private EditText etPassword;
     private Button registerBtn;
+    private JDBUtils jdbUtils;
+    private HDBUtils hdbUtils;
+    private XDBUtils xdbUtils;
 
 
     @Override
@@ -35,9 +44,9 @@ public class LoginViewActivity extends BaseActivity<LoginPresenterImpl> implemen
     @Override
     public void initView() {
         setContentView(R.layout.activity_login_view);
-        btLogin =  findViewById(R.id.login_bt_login);
-        etUser =  findViewById(R.id.login_et_userName);
-        etPassword =  findViewById(R.id.login_et_password);
+        btLogin = findViewById(R.id.login_bt_login);
+        etUser = findViewById(R.id.login_et_userName);
+        etPassword = findViewById(R.id.login_et_password);
         registerBtn = findViewById(R.id.login_bt_register);
 
 
@@ -52,7 +61,7 @@ public class LoginViewActivity extends BaseActivity<LoginPresenterImpl> implemen
     @Override
     public void initData() {
         mPresenter.initLoginInfo();
-        etUser.setText(MyApp.getPreferencesService().getValue("user",""));
+        etUser.setText(MyApp.getPreferencesService().getValue("user", ""));
         etPassword.setText(MyApp.getPreferencesService().getValue("password", ""));
 //        checkUpdate();
 
@@ -108,7 +117,6 @@ public class LoginViewActivity extends BaseActivity<LoginPresenterImpl> implemen
 //        });
 //
 //    }
-
     @Override
     public void onMyClick(View v) {
 
@@ -127,20 +135,22 @@ public class LoginViewActivity extends BaseActivity<LoginPresenterImpl> implemen
                         break;
                     }
 
+                    jdbUtils = new JDBUtils(this);
+                    hdbUtils = new HDBUtils(this);
+                    xdbUtils = new XDBUtils(this);
 
-                    if (etUser.getText().toString().trim().equals("b3")) {
-                        if (etPassword.getText().toString().trim().equals("123456")) {
-                            MyApp.getPreferencesService().save("user", etUser.getText().toString().trim());
-                            MyApp.getPreferencesService().save("password",etPassword.getText().toString().trim());
-                            gotoMainAct();
-                            finishUI();
-                        } else {
-                            showToast("请输入正确的密码");
+                    if (hdbUtils.isRight(etUser.getText().toString().trim()) || jdbUtils.isRight(etUser.getText().toString().trim())
+                            || xdbUtils.isRight(etUser.getText().toString().trim())) {
+                        if (hdbUtils.isRight(etUser.getText().toString().trim())) {
+                            dbNumber = 0;
+                        } else if (jdbUtils.isRight(etUser.getText().toString().trim())) {
+                            dbNumber = 1;
+                        } else if (xdbUtils.isRight(etUser.getText().toString().trim())) {
+                            dbNumber = 2;
                         }
-                    } else if (etUser.getText().toString().trim().equals("芒果娱乐宣传")) {
                         if (etPassword.getText().toString().trim().equals("123456")) {
                             MyApp.getPreferencesService().save("user", etUser.getText().toString().trim());
-                            MyApp.getPreferencesService().save("password",etPassword.getText().toString().trim());
+                            MyApp.getPreferencesService().save("password", etPassword.getText().toString().trim());
                             gotoMainAct();
                             finishUI();
                         } else {
@@ -148,8 +158,21 @@ public class LoginViewActivity extends BaseActivity<LoginPresenterImpl> implemen
                         }
                     } else {
                         showToast("无此用户");
-                        break;
                     }
+
+//                   if (etUser.getText().toString().trim().equals("芒果娱乐宣传")) {
+//                        if (etPassword.getText().toString().trim().equals("123456")) {
+//                            MyApp.getPreferencesService().save("user", etUser.getText().toString().trim());
+//                            MyApp.getPreferencesService().save("password",etPassword.getText().toString().trim());
+//                            gotoMainAct();
+//                            finishUI();
+//                        } else {
+//                            showToast("请输入正确的密码");
+//                        }
+//                    } else {
+//                        showToast("无此用户");
+//                        break;
+//                    }
 
                 } else {
                     mPresenter.login();
@@ -203,6 +226,8 @@ public class LoginViewActivity extends BaseActivity<LoginPresenterImpl> implemen
     protected void onDestroy() {
         super.onDestroy();
         AllenVersionChecker.getInstance().cancelAllMission(this);
+        jdbUtils.setClose();
+        hdbUtils.setClose();
     }
 
 

@@ -25,6 +25,7 @@ public class MainViewActivity extends BaseActivity<MainPresenterImpl> implements
     private MainPersonViewFrag mainPersonViewFrag;
     private NavigationTabBar navigationTabBar;
 
+
     @Override
     public MainPresenterImpl initPresent() {
         return new MainPresenterImpl();

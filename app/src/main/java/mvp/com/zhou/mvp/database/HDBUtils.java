@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,13 +68,34 @@ public class HDBUtils {
 
 
     /**
+     * 根据用户名查询
+     */
+    public JVBean queryForName(String nameStr) {
+        Cursor cursor = db.rawQuery("select phoneNumber,wxNumber,wbName,fensi,money,JH from " + TABLE_NAME + " where name=?", new String[]{nameStr});
+        JVBean jvBean = new JVBean();
+        cursor.moveToFirst();
+        jvBean.setPhoneNumber(cursor.getString(0));
+        jvBean.setWxNumber(cursor.getString(1));
+        jvBean.setWBName(cursor.getString(2));
+        jvBean.setFenSi(cursor.getString(3));
+        jvBean.setMoney(cursor.getString(4));
+        jvBean.setJinOrHuang(cursor.getString(5));
+        return jvBean;
+    }
+
+    /**
      * 查询用户是否存在
      */
     public boolean isRight(String nameStr) {
 
-        db.execSQL("select name from" + TABLE_NAME +" where name=?",new String[]{nameStr});
+        Cursor cursor = db.rawQuery("select name from " + TABLE_NAME +" where name=?",new String[]{nameStr});
+        try {
+            boolean move = cursor.moveToFirst();
+            return move;
+        } catch (Exception e) {
+            return false;
+        }
 
-        return true;
     }
 
 
@@ -85,6 +107,7 @@ public class HDBUtils {
         Cursor cursor = db.rawQuery("select icon,name,phoneNumber,wxNumber,wbName,fensi,money,JH,wbIndex" +
                 " from " + TABLE_NAME, null);
         while (cursor.moveToNext()) {
+
             int icon = Integer.parseInt(cursor.getString(0));
             String name = cursor.getString(1);
             String phoneNumber = cursor.getString(2);
@@ -106,6 +129,7 @@ public class HDBUtils {
             user.setIndexSrc(wbIndex);
             list.add(user);
         }
+        cursor.close();
 
         return list;
     }

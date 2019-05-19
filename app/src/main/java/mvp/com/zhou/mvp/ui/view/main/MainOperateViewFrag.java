@@ -23,6 +23,7 @@ public class MainOperateViewFrag extends BaseFragment<MainOperatePresenterImpl> 
     private RecyclerView jinVRv;
     private List<JVBean> list;
     private JinVAdapter adapter;
+    private HDBUtils hdbUtils;
 
     @Override
     public MainOperatePresenterImpl initPresent() {
@@ -47,7 +48,7 @@ public class MainOperateViewFrag extends BaseFragment<MainOperatePresenterImpl> 
 //        jinVRv.setItemViewCacheSize(16);
 //        jinVRv.setDrawingCacheEnabled(true);
 //        jinVRv.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
-        HDBUtils hdbUtils = new HDBUtils(getContext());
+        hdbUtils = new HDBUtils(getContext());
         List<JVBean> list1 = hdbUtils.queryData();
         list.addAll(list1);
         adapter = new JinVAdapter(getContext(), this.list);
@@ -67,7 +68,16 @@ public class MainOperateViewFrag extends BaseFragment<MainOperatePresenterImpl> 
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        List<JVBean> list1 = hdbUtils.queryData();
+        list.clear();
+        list.addAll(list1);
 
+        adapter.notifyDataSetChanged();
+        jinVRv.setAdapter(adapter);
+    }
 
     @Override
     public void onMyClick(View v) {

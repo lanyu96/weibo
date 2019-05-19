@@ -66,6 +66,38 @@ public class JDBUtils {
     }
 
     /**
+     * 根据用户名查询
+     */
+    public JVBean queryForName(String nameStr) {
+        Cursor cursor = db.rawQuery("select phoneNumber,wxNumber,wbName,fensi,money,JH from " + TABLE_NAME + " where name=?", new String[]{nameStr});
+        cursor.moveToFirst();
+        JVBean jvBean = new JVBean();
+        jvBean.setPhoneNumber(cursor.getString(0));
+        jvBean.setWxNumber(cursor.getString(1));
+        jvBean.setWBName(cursor.getString(2));
+        jvBean.setFenSi(cursor.getString(3));
+        jvBean.setMoney(cursor.getString(4));
+        jvBean.setJinOrHuang(cursor.getString(5));
+        return jvBean;
+    }
+
+
+    /**
+     * 查询用户是否存在
+     */
+    public boolean isRight(String nameStr) {
+
+        Cursor cursor = db.rawQuery("select name from " + TABLE_NAME +" where name=?",new String[]{nameStr});
+        try {
+            boolean move = cursor.moveToFirst();
+            return move;
+        } catch (Exception e) {
+            return false;
+        }
+
+    }
+
+    /**
      * 查询数据
      */
     public List<JVBean> queryData() {
@@ -94,7 +126,7 @@ public class JDBUtils {
             user.setIndexSrc(wbIndex);
             list.add(user);
         }
-
+        cursor.close();
         return list;
     }
 

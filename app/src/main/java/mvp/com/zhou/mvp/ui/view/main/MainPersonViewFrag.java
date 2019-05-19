@@ -14,7 +14,10 @@ import java.util.List;
 
 import mvp.com.zhou.mvp.MyApp;
 import mvp.com.zhou.mvp.R;
+import mvp.com.zhou.mvp.database.HDBUtils;
 import mvp.com.zhou.mvp.database.JDBUtils;
+import mvp.com.zhou.mvp.database.XDBUtils;
+import mvp.com.zhou.mvp.httputil.HttpContants;
 import mvp.com.zhou.mvp.ui.bean.weibo.JVBean;
 import mvp.com.zhou.mvp.ui.callback.CallBackPositionListener;
 import mvp.com.zhou.mvp.ui.dialog.DialogUtils;
@@ -22,6 +25,7 @@ import mvp.com.zhou.mvp.ui.presenter.main.MainPersonPresenterImpl;
 import mvp.com.zhou.mvp.ui.view.ChangeInfo;
 import mvp.com.zhou.mvp.ui.view.LoginViewActivity;
 import mvp.com.zhou.mvp.ui.view.base.BaseFragment;
+import mvp.com.zhou.mvp.utils.MyWebView;
 import mvp.com.zhou.mvp.utils.util.PreferencesService;
 
 
@@ -48,6 +52,9 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
     private TextView phoneTv;
     private JDBUtils dbUtils;
     private LinearLayout changeInfoLl;
+    private HDBUtils hdbUtils;
+    private JDBUtils jdbUtils;
+    private XDBUtils xdbUtils;
 
     @Override
     public MainPersonPresenterImpl initPresent() {
@@ -117,18 +124,57 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
     }
 
     private void queryInfo() {
-        List<JVBean> list1 = dbUtils.queryData();
-        String name = list1.get(11).getName();
-        String phoneNumber = list1.get(11).getPhoneNumber();
-        String wxNumber = list1.get(11).getWxNumber();
-        String wbName = list1.get(11).getWBName();
-        String money = list1.get(11).getMoney();
-        String fensi = list1.get(11).getFenSi();
-        String jh = list1.get(11).getJinOrHuang();
-        if (MyApp.getPreferencesService().getValue("user", "").equals("芒果娱乐宣传")) {
-            tvPerson.setText(MyApp.getPreferencesService().getValue("user",""));
-            phoneTv.setText("13567423654");
-            tvFarm.setText("edbhru126");
+        String name = MyApp.getPreferencesService().getValue("user", "");
+        String phoneNumber = "";
+        String wxNumber = "";
+        String wbName = "";
+        String money = "";
+        String fensi = "";
+        String jh = "";
+
+        String Xname = MyApp.getPreferencesService().getValue("user", "");
+        String XphoneNumber = "";
+        String Xwx ="";
+        switch (HttpContants.dbNumber) {
+            case 0:
+                hdbUtils = new HDBUtils(getContext());
+                JVBean jvBean = hdbUtils.queryForName(MyApp.getPreferencesService().getValue("user", ""));
+                phoneNumber = jvBean.getPhoneNumber();
+                wxNumber = jvBean.getWxNumber();
+                wbName = jvBean.getWBName();
+                money = jvBean.getMoney();
+                fensi = jvBean.getFenSi();
+                jh = jvBean.getJinOrHuang();
+                break;
+            case 1:
+                jdbUtils = new JDBUtils(getContext());
+                JVBean jvBean1 = jdbUtils.queryForName(MyApp.getPreferencesService().getValue("user", ""));
+                phoneNumber = jvBean1.getPhoneNumber();
+                wxNumber = jvBean1.getWxNumber();
+                wbName = jvBean1.getWBName();
+                money = jvBean1.getMoney();
+                fensi = jvBean1.getFenSi();
+                jh = jvBean1.getJinOrHuang();
+                break;
+            case 2:
+                xdbUtils = new XDBUtils(getContext());
+                JVBean jvBean2 = xdbUtils.queryForName(MyApp.getPreferencesService().getValue("user", ""));
+                XphoneNumber = jvBean2.getPhoneNumber();
+                Xwx = jvBean2.getWxNumber();
+                break;
+        }
+//        List<JVBean> list1 = dbUtils.queryData();
+//        String name = list1.get(11).getName();
+//        String phoneNumber = list1.get(11).getPhoneNumber();
+//        String wxNumber = list1.get(11).getWxNumber();
+//        String wbName = list1.get(11).getWBName();
+//        String money = list1.get(11).getMoney();
+//        String fensi = list1.get(11).getFenSi();
+//        String jh = list1.get(11).getJinOrHuang();
+        if (HttpContants.dbNumber == 2) {
+            tvPerson.setText(Xname);
+            phoneTv.setText(XphoneNumber);
+            tvFarm.setText(Xwx);
             baojiaTv.setText(" - ");
             tvFeild.setText(" - ");
             styleTv.setText(" - ");
@@ -243,6 +289,19 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
     @Override
     public void onDestroy() {
         super.onDestroy();
-        dbUtils.setClose();
+        if (dbUtils != null) {
+            dbUtils.setClose();
+        }
+        if (jdbUtils != null) {
+            jdbUtils.setClose();
+        }
+        if (hdbUtils != null) {
+            hdbUtils.setClose();
+        }
+        if (xdbUtils != null) {
+            xdbUtils.setClose();
+        }
+
+
     }
 }

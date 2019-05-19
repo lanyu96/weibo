@@ -114,7 +114,15 @@ public class RegisterViewActivity extends BaseActivity<RegisterPresenterImpl> im
                             , wbNameEt.getText().toString().trim()
                             , fensiEt.getText().toString().trim()+"万"
                             , baojiaEt.getText().toString().trim()
-                            , jhEt.getText().toString().trim()+"V"
+                            , "金V"
+                            , indexEt.getText().toString().trim()};
+                    String[] value2 = new String[]{String.valueOf(R.drawable.icon), nameEt.getText().toString().trim()
+                            , phoneEt.getText().toString().trim()
+                            , wxNumberEt.getText().toString().trim()
+                            , wbNameEt.getText().toString().trim()
+                            , fensiEt.getText().toString().trim()+"万"
+                            , baojiaEt.getText().toString().trim()
+                            , "黄V"
                             , indexEt.getText().toString().trim()};
                     try {
                         if (!TextUtils.isEmpty(trim) && Integer.valueOf(trim) > 49) {
@@ -124,7 +132,7 @@ public class RegisterViewActivity extends BaseActivity<RegisterPresenterImpl> im
                             finishUI();
                         } else if (!TextUtils.isEmpty(trim) && Integer.valueOf(trim) < 50) {
                             hdbUtils = new HDBUtils(this);
-                            hdbUtils.addData(title1, value1);
+                            hdbUtils.addData(title1, value2);
                             showToast("注册成功");
                             finishUI();
                         } else {

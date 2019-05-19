@@ -154,7 +154,7 @@
 
 
                 <LinearLayout
-
+                    android:visibility="gone"
                     style="@style/my_ll_row">
 
                     <TextView
