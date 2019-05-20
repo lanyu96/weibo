@@ -4,12 +4,11 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import mvp.com.zhou.mvp.ui.bean.weibo.JVBean;
+import mvp.com.zhou.mvp.utils.bean.weibo.JVBean;
 
 public class HDBUtils {
     private DBHelper dbHelper;

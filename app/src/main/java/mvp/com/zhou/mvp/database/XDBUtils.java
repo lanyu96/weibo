@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import mvp.com.zhou.mvp.ui.bean.weibo.JVBean;
+import mvp.com.zhou.mvp.utils.bean.weibo.JVBean;
 
 public class XDBUtils {
     private DBHelper dbHelper;
