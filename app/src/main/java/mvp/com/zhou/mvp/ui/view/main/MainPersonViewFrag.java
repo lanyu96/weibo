@@ -24,6 +24,7 @@ import mvp.com.zhou.mvp.ui.dialog.DialogUtils;
 import mvp.com.zhou.mvp.ui.presenter.main.MainPersonPresenterImpl;
 import mvp.com.zhou.mvp.ui.view.ChangeInfo;
 import mvp.com.zhou.mvp.ui.view.LoginViewActivity;
+import mvp.com.zhou.mvp.ui.view.SplashActivity;
 import mvp.com.zhou.mvp.ui.view.base.BaseFragment;
 import mvp.com.zhou.mvp.utils.MyWebView;
 import mvp.com.zhou.mvp.utils.util.PreferencesService;
@@ -241,14 +242,7 @@ public class MainPersonViewFrag extends BaseFragment<MainPersonPresenterImpl> im
             case R.id.fragment_person_get_update_ll:
 //                new SplashActivity().upDate(getContext());
 
-                showProgress("正在检查更新");
-
-                SystemClock.sleep(300);
-
-
-                hideProgress();
-
-                showToast("已是最新版本");
+                new SplashActivity().upDate(getContext());
 
 
 

@@ -287,8 +287,8 @@ public class SplashActivity extends AppCompatActivity {
                 //检查更新
                 String nowVersion = MyApp.getVersion();
                 //服务器端版本号
-                String newVersion = appInfo.getResult().get(0).getFversion();
-
+//                String newVersion = appInfo.getResult().get(0).getFversion();
+                String newVersion = "1.2.1";
                 //test
 //                String newVersion = "1.0.4";
                 if (nowVersion.equals(newVersion)) {
@@ -298,7 +298,9 @@ public class SplashActivity extends AppCompatActivity {
 
                 Log.i("TEST11", newVersion);
                 //新版本App的下载地址
-                String downloadUrl = appInfo.getResult().get(0).getFaddress();
+//                String downloadUrl = appInfo.getResult().get(0).getFaddress();
+
+                String downloadUrl = "http://47.110.9.80:8080/lanyu/app/weibo.apk";
                 //版本更新提醒的标题
                 String title = "发现新版本";
                 //版本更新提醒的详细信息
@@ -306,7 +308,7 @@ public class SplashActivity extends AppCompatActivity {
                 //如果当前版本与远程最新版本不符,则调用App更新下载的方法
 
                 if (!nowVersion.equals(newVersion)) {
-                    AppUpdate.sendRequest(context, title, updateContent, downloadUrl);
+                    AppUpdate.sendRequest(context, title, "1、优化了运行速度\n2、修复了一些BUG", downloadUrl);
                 }
             }
 
